@@ -1,0 +1,34 @@
+﻿<Window x:Class="Pogoda2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pogoda2" xmlns:wpf="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#C0C0C0">
+            <Label Content="Aktualna pogoda:"/>
+            <TextBlock x:Name="lblWeather" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Label Content="Temperatura:"/>
+            <TextBlock x:Name="lblTemperature" HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <wpf:Map x:Name="Map"  Height="490" Width="555" MouseDoubleClick="getCords" RenderTransformOrigin="0.5,0.5" >
+                <wpf:Map.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.156"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </wpf:Map.RenderTransform>
+            </wpf:Map>
+            <Label Content="Odczuwalna temperatura:"/>
+            <TextBlock x:Name="lblFeelsLike" HorizontalAlignment="Left" Margin="10,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Label Content="Wilgotność:"/>
+            <TextBlock x:Name="lblRain" HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Label Content="Nasłonecznienie:"/>
+            <TextBlock x:Name="lblClouds" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        </StackPanel>
+    </Grid>
+</Window>
